@@ -22,3 +22,28 @@ SELECT L.Titulo,P.Nome
 FROM Lancamentos L
 RIGHT JOIN Plataformas P
 ON L.IdPlataforma = P.IdPlataforma
+
+CREATE PROCEDURE BuscarFilmePorCategoria @Categoria VARCHAR(255)
+AS
+SELECT IdLancamento, Titulo, IdCategoria
+FROM Lancamentos WHERE IdCategoria = @Categoria;
+
+CREATE PROCEDURE BuscarFilmePorCategoriaNome @Categoria VARCHAR(255)
+AS
+SELECT IdLancamento, Titulo, Categorias.Nome
+FROM Lancamentos JOIN Categorias ON Categorias.IdCategoria = Lancamentos.IdCategoria WHERE Categorias.Nome= @Categoria;
+
+EXEC BuscarFilmePorCategoria 6;
+EXEC BuscarFilmePorCategoriaNome 'Ação';
+
+CREATE PROCEDURE BuscarFilmePorId @IdTipoLancamento INT  
+AS 
+SELECT IdLancamento, Titulo, Sinopse, DataLancamento, IdPlataforma, IdCategoria, IdClassificao, DuracaoMin 
+FROM Lancamentos WHERE IdTipoLancamento = @IdTipoLancamento;
+
+EXEC BuscarFilmePorId 1
+
+CREATE VIEW vwPlataformas AS
+SELECT IdPlataforma, Titulo, IdCategoria FROM Lancamentos 
+
+SELECT * FROM vwPlataformas WHERE IdPlataforma = 2

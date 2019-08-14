@@ -41,6 +41,12 @@ CREATE TABLE Usuarios
 	,IdTipoUsuario		INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario)
 );
 
+ALTER TABLE Usuarios
+DROP COLUMN Imagem
+
+ALTER TABLE Usuarios
+ADD Imagem VARCHAR(500)
+
 CREATE TABLE Lancamentos
 (	
 	IdLancamento		INT PRIMARY KEY IDENTITY 

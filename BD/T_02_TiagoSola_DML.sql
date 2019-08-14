@@ -18,6 +18,12 @@ VALUES ('Erick','erik@email.com','123456',1)
 	   ,('Helena','helena@email.com','123456',2)
 	   ,('Roberto','rob@email.com','3110',2)
 
+INSERT INTO Usuarios (Imagem)
+VALUES ('https://luizlomba.com.br/posteip/midia/Usuario.png')
+	   ,('https://conteudo.imguol.com.br/blogs/174/files/2018/05/iStock-648229868-1024x909.jpg')
+       ,('https://conteudo.imguol.com.br/blogs/174/files/2018/05/iStock-648229868-1024x909.jpg')
+	   ,('https://luizlomba.com.br/posteip/midia/Usuario.png')
+
 UPDATE Usuarios SET IdTipoUsuario = 1 WHERE IdUsuario = 3
 
 INSERT INTO Lancamentos (Titulo, Sinopse, DuracaoMin, DataLancamento, IdPlataforma, IdCategoria, IdClassificao, IdTipoLancamento)
@@ -55,6 +61,15 @@ Suas aventuras terminam quando ele é preso e faz um acordo com agentes do FBI. B
 ,('Era uma vez em... Hollywood','Los Angeles, 1969. Rick Dalton (Leonardo DiCaprio) é um ator de TV que, juntamente com seu dublê, está decidido a fazer o seu nome em Hollywood. 
 Para tanto, ele conhece muitas pessoas influentes na indústria cinematográfica, o que os acaba levando aos assassinatos realizados por Charles Manson na época, 
 entre eles o da atriz Sharon Tate (Margot Robbie), que na época estava grávida do diretor Roman Polanski (Rafal Zawierucha).','161','2003-08-15T00:00:00',2,2,5,1)
+
+INSERT INTO Lancamentos (Titulo, Sinopse, DuracaoMin, DataLancamento, IdPlataforma, IdCategoria, IdClassificao, IdTipoLancamento)
+VALUES ('Guardiões da Galáxia', 'O aventureiro do espaço Peter Quill torna-se presa de caçadores de recompensas depois que rouba a esfera de um vilão traiçoeiro, Ronan. 
+Para escapar do perigo, ele faz uma aliança com um grupo de quatro extraterrestres. Quando Quill descobre que a esfera roubada possui um poder capaz de mudar os rumos do universo, 
+ele e seu grupo deverão proteger o objeto para salvar o futuro da galáxia.', '125', '2014-07-31T00:00:00',2,6,3,1)
+
+,('Guardiões da Galaxia', 'O aventureiro do espaço Peter Quill torna-se presa de caçadores de recompensas depois que rouba a esfera de um vilão traiçoeiro, Ronan. 
+Para escapar do perigo, ele faz uma aliança com um grupo de quatro extraterrestres. Quando Quill descobre que a esfera roubada possui um poder capaz de mudar os rumos do universo, 
+ele e seu grupo deverão proteger o objeto para salvar o futuro da galáxia.', '125', '2014-07-31T00:00:00',1,6,3,1)
 
 SELECT * FROM Categorias ORDER BY IdCategoria ASC
 SELECT * FROM Plataformas ORDER BY IdPlataforma ASC
