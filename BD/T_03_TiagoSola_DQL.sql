@@ -23,6 +23,17 @@ FROM Lancamentos L
 RIGHT JOIN Plataformas P
 ON L.IdPlataforma = P.IdPlataforma
 
+SELECT L.Titulo,P.Nome,Ca.Nome,Cl.Idade,TL.Tipo
+FROM Lancamentos L
+JOIN Plataformas P
+ON L.IdPlataforma = P.IdPlataforma
+JOIN Categorias CA
+ON L.IdCategoria = Ca.IdCategoria
+JOIN Classificacoes Cl
+ON L.IdClassificao = Cl.IdClassificacao
+JOIN TipoLancamento TL
+ON L.IdTipoLancamento = TL.IdTipoLancamento
+
 CREATE PROCEDURE BuscarFilmePorCategoria @Categoria VARCHAR(255)
 AS
 SELECT IdLancamento, Titulo, IdCategoria
