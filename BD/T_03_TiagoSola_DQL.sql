@@ -7,6 +7,9 @@ SELECT * FROM TipoUsuario ORDER BY IdTipoUsuario ASC
 SELECT * FROM TipoLancamento ORDER BY IdTipoLancamento ASC
 SELECT * FROM Usuarios ORDER BY IdUsuario ASC
 SELECT * FROM Lancamentos ORDER BY IdLancamento ASC
+SELECT * FROM Favoritos ORDER BY ID ASC
+
+-- Selects
 
 SELECT L.Titulo,C.Nome
 FROM Lancamentos L
@@ -33,6 +36,15 @@ JOIN Classificacoes Cl
 ON L.IdClassificao = Cl.IdClassificacao
 JOIN TipoLancamento TL
 ON L.IdTipoLancamento = TL.IdTipoLancamento
+
+SELECT U.Nome, L.Titulo
+FROM Usuarios U
+JOIN Favoritos F
+ON U.IdUsuario = F.IdUsuario
+JOIN Lancamentos L
+ON L.IdLancamento = F.IdLancamento
+
+-- Procedures 
 
 CREATE PROCEDURE BuscarFilmePorCategoria @Categoria VARCHAR(255)
 AS
